@@ -1,41 +1,28 @@
-version: "3.8"
+version: '3.8'
 services:
   mongodb:
-    image: "mongo"
-    volumes:
-      - data:/data/db
+    image: mongo
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
-      MONGO_INITDB_DATABASE: comp3123_assignment2
-  
+      MONGO_INITDB_DATABASE: Assignment2
+
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     ports:
       - "3000:3000"
-    volumes:
-      - logs:/app/logs
-      - ./backend:/app
-      - /app/node_modules
-    environment:
-      DB_CONNECTION_STRING: 'mongodb+srv://paolocasison:abc.123@cluster0.3myz13n.mongodb.net/comp3123_assignment1?retryWrites=true&w=majority'
     depends_on:
       - mongodb
-  
+    environment:
+      DB_CONNECTION_STRING: "mongodb+srv://paolocasison:abc.123@cluster0.3myz13n.mongodb.net/Assignment2?retryWrites=true&w=majority"
+
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     ports:
-      - "3001:3000"
-    volumes:
-      - ./frontend/src:/app/src
-    stdin_open: true
-    tty: true
+      -  "3001:80"
     depends_on:
       - backend
-
-
-volumes:
-  data:
-  logs:

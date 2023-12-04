@@ -1,16 +1,19 @@
-FROM  node
+FROM node:14 as build
 
 WORKDIR /app
 
-COPY    package*.json .
+COPY package*.json ./
 
-RUN     npm install
+RUN npm install
 
-# install axios
-RUN    npm install axios    
+COPY . .
 
-COPY    . .
+RUN npm run build
 
-EXPOSE  3001
+FROM nginx
 
-CMD     ["npm", "start"]
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

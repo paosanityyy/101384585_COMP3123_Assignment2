@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import '../styles/Styles.css';
 
 const AddEmployee = () => {
     const [employee, setEmployee] = useState({

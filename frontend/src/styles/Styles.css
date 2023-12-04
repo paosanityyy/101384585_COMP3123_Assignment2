@@ -1,0 +1,73 @@
+/* styles.css */
+
+/* Common styles for all components */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* AddEmployee.jsx styles */
+  
+  .add-employee-container {
+    width: 400px; /* Adjust the width as needed */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .add-employee-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Details.jsx styles */
+  
+  .details-container {
+     /* Adjust the width as needed */
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .details-card {
+    width: 18rem;
+    margin: 20px auto;
+  }
+
+  .btn-danger a{
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+  }  
+
+  .btn-secondary a{
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+  }
+
+  
+  /* UpdateEmployee.jsx styles */
+  
+  .update-employee-container {
+    width: 400px; /* Adjust the width as needed */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .update-employee-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Additional styling as needed */
+  

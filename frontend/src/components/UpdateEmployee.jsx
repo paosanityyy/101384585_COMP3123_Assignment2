@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import '../styles/Styles.css';
 
 const UpdateEmployee = () => {
     const { id } = useParams();
@@ -82,12 +83,15 @@ const UpdateEmployee = () => {
                                 <Form.Control type="email" placeholder="Enter email" value={employee.email} onChange={onChangeEmail} />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit">
+                            <Button className="btn btn-secondary" variant="primary" type="submit">
                                 Update
                             </Button>
-                            <Link to="/" className="btn btn-danger">
+                            <Button className="btn btn-danger">
+                            <Link to="/" >
                                 Cancel
                             </Link>
+                            </Button>
+                            
                         </Form>
                     </Col>
                 </Row>

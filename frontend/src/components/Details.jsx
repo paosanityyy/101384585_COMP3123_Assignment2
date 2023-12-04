@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { useState, useEffect } from 'react';
+import '../styles/Styles.css';
 
 const Details = () => {
     const { id } = useParams();
@@ -31,11 +32,10 @@ const Details = () => {
 
     return (
         <>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem', border: 'solid 1px black'}}>
                 <Card.Body className="d-flex justify-content-start align-items-center">
                 <Link to ="/" className="btn btn-primary">Back</Link>
                 <Card.Title className="m-5">Employee Details</Card.Title>
-                <h1 className="m-5">Employee Details</h1>
                 </Card.Body>
                 <ListGroup variant="flush">
                     <ListGroup.Item>First Name: {employee.first_name}</ListGroup.Item>
@@ -43,12 +43,17 @@ const Details = () => {
                     <ListGroup.Item>Email: {employee.email}</ListGroup.Item>
                 </ListGroup>
                 <Card.Body className="d-flex justify-content-around">
+                    <button className="btn btn-secondary">
                     <Link to={`/Employee/Update/${employee._id}`} className="btn btn-warning">
                         Edit
                     </Link>
-                    <Link className="btn btn-danger" onClick={() => handleDelete(employee._id)} to={`/`}>
+                    </button>
+                    <button className="btn btn-danger">
+                    <Link onClick={() => handleDelete(employee._id)} to={`/`}>
                         Delete
                     </Link>
+                    </button>
+                    
                 </Card.Body>
             </Card>
         </>

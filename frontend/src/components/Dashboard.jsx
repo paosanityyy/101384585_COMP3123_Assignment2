@@ -1,6 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../styles/Dashboard.css';
 import { Link } from 'react-router-dom';
 
 function Dashboard() {
@@ -35,7 +36,7 @@ function Dashboard() {
             <div className='container'>
                 <div className='card'>
                     <div className='card-header d-flex flex-row-reverse'>
-                        <Link to="/Employee/Add" className="btn btn-primary">Add Employee</Link>
+                        <button className="btn btn-add"><Link to="/Employee/Add">Add Employee</Link></button>
                     </div>
                     <div className='card-body'>
                         <Table striped bordered hover>
@@ -44,6 +45,7 @@ function Dashboard() {
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Email</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,8 +55,8 @@ function Dashboard() {
                                         <td>{employee.last_name}</td>
                                         <td>{employee.email}</td>
                                         <td>
-                                            <Link to={`/Employee/Details/${employee._id}`} className="btn btn-primary">Details</Link>
-                                            <Link to={`/Employee/Update/${employee._id}`} className="btn btn-warning">Edit</Link>
+                                            <button className="btn btn-secondary"><Link to={`/Employee/Details/${employee._id}`}>Details</Link></button>
+                                            <button className="btn btn-secondary"><Link to={`/Employee/Update/${employee._id}`} className="btn btn-secondary">Edit</Link></button>
                                             <button className="btn btn-danger" onClick={() => handleDelete(employee._id)}>Delete</button>
                                         </td>
                                     </tr>
