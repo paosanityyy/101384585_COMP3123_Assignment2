@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; /* Remove default body margin */
+    font-size: 24px;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 50px;
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  }
+
+  
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+.signUpBtn{
+    background-color: green;
+    color: white;
+    font-size: 20px;
+}
+
+  
+
+  
